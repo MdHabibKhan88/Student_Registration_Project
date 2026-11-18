@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Student Registration System</h1>
+        <p>Register students easily</p>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#registration">Registration</a>
+        <a href="#students">Students</a>
+    </nav>
+
+    <main id="home">
+        <section class="container" id="registration">
+            <h2>Student Registration Form</h2>
+
+            <form id="studentForm" novalidate>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" autocomplete="name" required>
+                    <small class="error" id="nameError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" autocomplete="email" required>
+                    <small class="error" id="emailError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+                    <small class="error" id="phoneError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="dob" required>
+                    <small class="error" id="dobError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="department">Department</label>
+                    <select id="department" name="department" required>
+                        <option value="">Select Department</option>
+                        <option value="CSE">CSE</option>
+                        <option value="EEE">EEE</option>
+                        <option value="BBA">BBA</option>
+                        <option value="English">English</option>
+                    </select>
+                    <small class="error" id="departmentError"></small>
+                </div>
+
+                <fieldset class="form-group gender-group">
+                    <legend>Gender</legend>
+                    <label><input type="radio" name="gender" value="Male" required> Male</label>
+                    <label><input type="radio" name="gender" value="Female"> Female</label>
+                    <label><input type="radio" name="gender" value="Other"> Other</label>
+                    <small class="error" id="genderError"></small>
+                </fieldset>
+
+                <div class="form-group full-width">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" autocomplete="new-password" required>
+                    <small class="hint">Password must contain at least 8 characters.</small>
+                    <small class="error" id="passwordError"></small>
+                </div>
+
+                <div class="form-actions full-width">
+                    <button type="submit">Register Student</button>
+                    <button type="reset" class="secondary">Clear Form</button>
+                </div>
+
+                <p id="successMessage" class="success full-width" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section class="container" id="students">
+            <h2>Registered Students</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Date of Birth</th>
+                            <th>Department</th>
+                            <th>Gender</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentData">
+                        <tr id="emptyRow">
+                            <td colspan="6" class="empty">No students registered yet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Student Registration System</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
